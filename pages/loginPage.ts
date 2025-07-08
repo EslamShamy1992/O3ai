@@ -14,7 +14,7 @@ export class loginPage extends BasePage {
         super(page)
 
         this.username=page.getByPlaceholder('Email');
-        this.password=page.getByPlaceholder('Password')
+        this.password=page.getByPlaceholder('Password');
         this.loginButton=page.getByRole('button',{name: 'Login'});
 
 

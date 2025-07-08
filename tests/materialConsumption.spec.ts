@@ -11,10 +11,10 @@ test.describe('Material Consumption - SFDC Configuration', () => {
 
   });
 
-  test.only('should create new material consumption record', async ({page}) => {
+  test('should create new material consumption record', async ({page}) => {
 
     await page.getByText('Smart Factory Group').click()
-        await page.pause()
+        // await page.pause()
 
 
   });
