@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
 
+// Load the appropriate .env file based on NODE_ENV
+dotenv.config({ path: `.env.${process.env.NODE_ENV || 'dev'}` });
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -28,7 +31,7 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-     baseURL: 'https://devlean.o3ai.com/',
+     baseURL: 'https://semantic-o3-core-angular.azurewebsites.net/',
      
     storageState:'auth.json',
     /* Base URL to use in actions like `await page.goto('/')`. */
