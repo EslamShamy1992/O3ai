@@ -20,10 +20,7 @@ test.describe('Semantic TestCases', async () => {
        password= process.env.password as string
     await page.goto('/login')
   });
-
-
-
-
+ 
   test('check OEE dashboard with years',async({page})=>{
 
    await loginpage.login_with_valid_account(username,password);
@@ -33,7 +30,6 @@ test.describe('Semantic TestCases', async () => {
    await oeedashboard.filterWithyears('7/1/2024', '7/1/2025');
    // assert that OEE chart is displayed with 39% after 9 seconds
    expect(await oeedashboard.isOEEpercentageIsdisplayedCorrectly()).toBeTruthy()
-   await page.pause()
     
 
   })
@@ -47,7 +43,6 @@ test.describe('Semantic TestCases', async () => {
    await oeedashboard.filterWithMonths('5/1/2025', '7/1/2025')
    // assert shutdown is displayed with expected number
   expect(await oeedashboard.shutdownHoursIsdisplayedCorrectly()).toBeTruthy()
-    await page.pause()
 
   })
 

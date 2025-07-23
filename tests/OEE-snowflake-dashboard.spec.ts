@@ -27,8 +27,7 @@ test.describe('Semantic TestCases', async () => {
      await loginpage.login_with_valid_account(username,password);
      await homepage.clickhomeIcon();
      await homepage.clickOnProductivityManagement()
-      await homepage.clickOEEsnowflakeDashboard()
-
+     await homepage.clickOEEsnowflakeDashboard()
      await oeedashboard.filterWithyears('7/1/2024', '7/1/2025');
       // assert that OEE chart is displayed with 39% after 9 seconds
     expect(await oeedashboard.isOEEpercentageIsdisplayedCorrectly()).toBeTruthy()
@@ -43,20 +42,20 @@ test.describe('Semantic TestCases', async () => {
      await homepage.clickhomeIcon();
      await homepage.clickOnProductivityManagement()
      await homepage.clickOEEsnowflakeDashboard()
-     await homepage.clickoeeDashboard()
-   await oeedashboard.filterWithMonths('5/1/2025', '7/1/2025')
-      
-  
+     await oeedashboard.filterWithMonths('5/1/2025', '7/1/2025')
+     expect(await oeedashboard.shutdownHoursIsdisplayedCorrectly()).toBeTruthy()
+
+
     })
 
-      test('filter OEE dashboard- snowflake with days',async({page})=>{
- await loginpage.login_with_valid_account(username,password)
- await homepage.clickhomeIcon();
- await homepage.clickOnProductivityManagement()
- await homepage.clickOEEsnowflakeDashboard()
- await oeedashboard.filterWithDays('6/1/2025', '6/5/2025');
+  test('filter OEE dashboard- snowflake with days',async({page})=>{
+   await loginpage.login_with_valid_account(username,password)
+    await homepage.clickhomeIcon();
+    await homepage.clickOnProductivityManagement()
+    await homepage.clickOEEsnowflakeDashboard()
+    await oeedashboard.filterWithDays('6/1/2025', '6/5/2025');
   // assert that 95% is displayed after 5 seconds for availabitlity chart
- expect(await oeedashboard.isAvailabilitypercentageDisplayed()).toBeTruthy()
+    expect(await oeedashboard.isAvailabilitypercentageDisplayed()).toBeTruthy()
  
   });
 

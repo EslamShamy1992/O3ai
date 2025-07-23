@@ -87,12 +87,15 @@ async filterWithMonths(startDate:string,endDate:string){
 
   async isOEEpercentageIsdisplayedCorrectly(){
 
-    await this.page.waitForTimeout(9000);
+    const percentage=this.page.getByText('39 %');
+    await percentage.waitFor({state:'visible'})
     return await this.page.getByText('39 %').isVisible()
   }
 
   async shutdownHoursIsdisplayedCorrectly(){
 
+    const hours= this.page.getByText('In Hrs: 573.15');
+    await hours.waitFor({state:'visible'});
     return await this.page.getByText('In Hrs: 573.15').isVisible();
   }
 

@@ -15,7 +15,7 @@ dotenv.config({ path: `.env.${process.env.NODE_ENV || 'dev'}` });
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-     timeout:90 * 1000,
+     timeout:120 * 1000,
 
   // globalSetup:require.resolve('./auth/global-setup'),
   testDir: './tests',
